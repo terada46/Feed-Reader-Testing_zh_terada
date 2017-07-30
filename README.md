@@ -4,7 +4,7 @@
 
 ## 运行此web应用
 
-  - 从Git下载此应用 https://github.com/terada46/neighborhood-map-ca
+  - 从Git下载此应用 https://github.com/terada46/Feed-Reader-Testing_zh_terada
   - 打开index.html即可看到阅读器执行并读取了rss源的内容，以列表形式展现。
   - web页面底部可以查看到使用Jasmine框架编写的7个测试用例，并全部通过。
 
