@@ -58,13 +58,13 @@ $(function() {
         });
          /* TODO:
           * 写一个测试用例保证当菜单图标被点击的时候菜单会切换可见状态。这个
-          * 测试应该包含两个 expectation ： 党点击图标的时候菜单是否显示，
+          * 测试应该包含两个 expectation ： 当点击图标的时候菜单是否显示，
           * 再次点击的时候是否隐藏。
           */
         it('can toggle visibility when clicked', function() {
             menuIcon.trigger('click');
             expect(body.hasClass('menu-hidden')).toBe(false);
-
+            //再次主动触发点击事件
             menuIcon.trigger('click');
             expect(body.hasClass('menu-hidden')).toBe(true);
         });
@@ -83,8 +83,7 @@ $(function() {
          * 和异步的 done() 函数。
          */
         it('has at least one entry', function() {
-            entry = $(".feed a:first-child article.entry").html();
-            console.log($(".feed a:first-child article.entry").html());
+            entry = $(".feed a:first-child article.entry");
             expect(entry).toBeDefined();               
         });
     });
@@ -103,11 +102,13 @@ $(function() {
         describe('when new id loaded', function(){
             var newEntry;
             beforeEach(function(done) {
+            //加载新源id
                 loadFeed(1,done);
             });
             it('is surely loaded', function() {
                 newEntry = $(".feed a:first-child article h2").html();
                 console.log(newEntry);
+                //通过比较加载新源id前后第一个文章标题文本来判断改变
                 expect(newEntry).not.toEqual(entry);
             });
         });
