@@ -99,13 +99,13 @@ $(function() {
          * 写一个测试保证当用 loadFeed 函数加载一个新源的时候内容会真的改变。
          * 记住，loadFeed() 函数是异步的。
          */
-        describe('when new id loaded', function(){
+        describe('when new feed loaded', function(){
             var newEntry;
             beforeEach(function(done) {
             //加载新源id
                 loadFeed(1,done);
             });
-            it('is surely loaded', function() {
+            it('is surely changed', function() {
                 newEntry = $(".feed a:first-child article h2").html();
                 console.log(newEntry);
                 //通过比较加载新源id前后第一个文章标题文本来判断改变
